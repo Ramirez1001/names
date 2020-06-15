@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Website <%= new Date().getFullYear() %></title>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<body>
+    <div id="container">
+        <header id="menu">
+            <h1>Publish your name for free :D</h1>
+            <p>Website made by: Ramirez &copy;</p>
+            <div id="links">
+                <a href="https://www.instagram.com/ramirez_sxd/" target="_blank"><img src="/Data/Page_Images/instagram.png" alt=""></a>
+            </div>
+        </header>
+    </div>
+    <form method="POST" action="/publish" class="group-form" enctype="application/x-www-form-urlencoded">
+        <div class="form-group-info">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <button type="submit" id="btn-submit">Submit</button>
+    </form>
+    <div class="container-name">
+        <% schema.forEach((value) => { %>
+            <div class="name">
+                <h6>Published: <%= value.date %></h6>
+                <h4>Name: <%= value.name = value.name.charAt(0).toUpperCase() + value.name.slice(1) %></h4>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
